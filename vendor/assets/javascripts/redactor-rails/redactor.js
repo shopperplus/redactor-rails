@@ -5326,9 +5326,9 @@
 			if (!this.isParentRedactor($table)) return false;
 			if ($table.size() == 0) return false;
 
-			this.bufferSet();
+			//this.bufferSet();
 
-			var $current_td =  $(this.getParent()).closest('td');
+			var $current_td =  $(this.getParent());
 			var index = $current_td.get(0).cellIndex;
 
 			// Set the focus correctly
@@ -5419,7 +5419,7 @@
 			if (!this.isParentRedactor($table)) return false;
 			if ($table.size() == 0) return false;
 
-			this.bufferSet();
+			//this.bufferSet();
 
 			var index = 0;
 
