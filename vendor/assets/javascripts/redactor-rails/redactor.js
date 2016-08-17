@@ -1376,74 +1376,74 @@
 				}
 
 				// pre
-				if (pre === true) return this.buildEventKeydownPre(e, current);
-				else
-				{
-					if (!this.opts.linebreaks)
-					{
-						// replace div to p
-						if (block && this.opts.rBlockTest.test(block.tagName))
-						{
-							// hit enter
-							this.bufferSet();
+				// if (pre === true) return this.buildEventKeydownPre(e, current);
+				// else
+				// {
+				// 	if (!this.opts.linebreaks)
+				// 	{
+				// 		// replace div to p
+				// 		if (block && this.opts.rBlockTest.test(block.tagName))
+				// 		{
+				// 			// hit enter
+				// 			this.bufferSet();
 
-							setTimeout($.proxy(function()
-							{
-								var blockElem = this.getBlock();
-								if (blockElem.tagName === 'DIV' && !$(blockElem).hasClass('redactor_editor'))
-								{
-									var node = $('<p>' + this.opts.invisibleSpace + '</p>');
-									$(blockElem).replaceWith(node);
-									this.selectionStart(node);
-								}
+				// 			setTimeout($.proxy(function()
+				// 			{
+				// 				var blockElem = this.getBlock();
+				// 				if (blockElem.tagName === 'DIV' && !$(blockElem).hasClass('redactor_editor'))
+				// 				{
+				// 					var node = $('<p>' + this.opts.invisibleSpace + '</p>');
+				// 					$(blockElem).replaceWith(node);
+				// 					this.selectionStart(node);
+				// 				}
 
-							}, this), 1);
-						}
-						else if (block === false)
-						{
-							// hit enter
-							this.bufferSet();
+				// 			}, this), 1);
+				// 		}
+				// 		else if (block === false)
+				// 		{
+				// 			// hit enter
+				// 			this.bufferSet();
 
-							var node = $('<p>' + this.opts.invisibleSpace + '</p>');
-							this.insertNode(node[0]);
-							this.selectionStart(node);
-							this.callback('enter', e);
-							return false;
-						}
+				// 			var node = $('<p>' + this.opts.invisibleSpace + '</p>');
+				// 			this.insertNode(node[0]);
+				// 			this.selectionStart(node);
+				// 			this.callback('enter', e);
+				// 			return false;
+				// 		}
 
-					}
+				// 	}
 
-					if (this.opts.linebreaks)
-					{
-						// replace div to br
-						if (block && this.opts.rBlockTest.test(block.tagName))
-						{
-							// hit enter
-							this.bufferSet();
+				// 	if (this.opts.linebreaks)
+				// 	{
+				// 		// replace div to br
+				// 		if (block && this.opts.rBlockTest.test(block.tagName))
+				// 		{
+				// 			// hit enter
+				// 			this.bufferSet();
 
-							setTimeout($.proxy(function()
-							{
-								var blockElem = this.getBlock();
-								if ((blockElem.tagName === 'DIV' || blockElem.tagName === 'P') && !$(blockElem).hasClass('redactor_editor'))
-								{
-									this.replaceLineBreak(blockElem);
-								}
+				// 			setTimeout($.proxy(function()
+				// 			{
+				// 				var blockElem = this.getBlock();
+				// 				if ((blockElem.tagName === 'DIV' || blockElem.tagName === 'P') && !$(blockElem).hasClass('redactor_editor'))
+				// 				{
+				// 					this.replaceLineBreak(blockElem);
+				// 				}
 
-							}, this), 1);
-						}
-						else
-						{
-							return this.buildEventKeydownInsertLineBreak(e);
-						}
-					}
+				// 			}, this), 1);
+				// 		}
+				// 		else
+				// 		{
+				// 			return this.buildEventKeydownInsertLineBreak(e);
+				// 		}
+				// 	}
 
-					// blockquote, figcaption
-					if (block.tagName == 'BLOCKQUOTE' || block.tagName == 'FIGCAPTION')
-					{
-						return this.buildEventKeydownInsertLineBreak(e);
-					}
+				// 	// blockquote, figcaption
+				// 	if (block.tagName == 'BLOCKQUOTE' || block.tagName == 'FIGCAPTION')
+				// 	{
+				// 		return this.buildEventKeydownInsertLineBreak(e);
+				// 	}
 
-				}
+				// }
 
 				this.callback('enter', e);
 			}
