@@ -757,8 +757,7 @@
 				html = this.cleanConvertProtected(html);
 				html = this.cleanConvertInlineTags(html, true);
 
-				//if (this.opts.linebreaks === false)	html = this.cleanConverters(html);
-				else html = html.replace(/<p(.*?)>([\w\W]*?)<\/p>/gi, '$2<br>');
+				if (this.opts.linebreaks === true)	html = html.replace(/<p(.*?)>([\w\W]*?)<\/p>/gi, '$2<br>');				
 			}
 
 			// $ fix
