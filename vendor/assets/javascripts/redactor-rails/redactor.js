@@ -1375,7 +1375,7 @@
 					else this.dblEnter++;
 				}
 
-				// pre
+				//pre
 				// if (pre === true) return this.buildEventKeydownPre(e, current);
 				// else
 				// {
@@ -2972,14 +2972,14 @@
 
 			return html;
 		},
-		cleanConverters: function(html)
-		{
-			// convert div to p
-			if (this.opts.convertDivs) html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p$1>$2</p>');
-			if (this.opts.paragraphy) html = this.cleanParagraphy(html);
+		// cleanConverters: function(html)
+		// {
+		// 	// convert div to p
+		// 	if (this.opts.convertDivs) html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p$1>$2</p>');
+		// 	if (this.opts.paragraphy) html = this.cleanParagraphy(html);
 
-			return html;
-		},
+		// 	return html;
+		// },
 		cleanConvertProtected: function(html)
 		{
 			if (this.opts.templateVars)
@@ -4395,25 +4395,25 @@
 			html = html.replace(/\[param(.*?)\]/gi, '<param$1>');
 			html = html.replace(/\[img(.*?)\]/gi, '<img$1>');
 
-			// convert div to p
-			if (this.opts.convertDivs)
-			{
-				html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p>$2</p>');
-				html = html.replace(/<\/div><p>/gi, '<p>');
-				html = html.replace(/<\/p><\/div>/gi, '</p>');
-			}
+			// // convert div to p
+			// if (this.opts.convertDivs)
+			// {
+			// 	html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p>$2</p>');
+			// 	html = html.replace(/<\/div><p>/gi, '<p>');
+			// 	html = html.replace(/<\/p><\/div>/gi, '</p>');
+			// }
 
-			if (this.currentOrParentIs('LI'))
-			{
-				html = html.replace(/<p>([\w\W]*?)<\/p>/gi, '$1<br>');
-			}
-			else
-			{
-				html = this.cleanParagraphy(html);
-			}
+			// if (this.currentOrParentIs('LI'))
+			// {
+			// 	html = html.replace(/<p>([\w\W]*?)<\/p>/gi, '$1<br>');
+			// }
+			// else
+			// {
+			// 	html = this.cleanParagraphy(html);
+			// }
 
-			// remove span
-			html = html.replace(/<span(.*?)>([\w\W]*?)<\/span>/gi, '$2');
+			// // remove span
+			// html = html.replace(/<span(.*?)>([\w\W]*?)<\/span>/gi, '$2');
 
 			// remove empty
 			html = html.replace(/<img>/gi, '');
@@ -4442,9 +4442,9 @@
 			// remove p in td
 			html = html.replace(/<td(.*?)>(\s*|\t*|\n*)<p>([\w\W]*?)<\/p>(\s*|\t*|\n*)<\/td>/gi, '<td$1>$3</td>');
 
-			// remove divs
-			html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '$2');
-			html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '$2');
+			// // remove divs
+			// html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '$2');
+			// html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '$2');
 
 			// FF specific
 			this.pasteClipboardMozilla = false;
