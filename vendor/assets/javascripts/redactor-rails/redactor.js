@@ -757,7 +757,7 @@
 				html = this.cleanConvertProtected(html);
 				html = this.cleanConvertInlineTags(html, true);
 
-				if (this.opts.linebreaks === false)	html = this.cleanConverters(html);
+				//if (this.opts.linebreaks === false)	html = this.cleanConverters(html);
 				else html = html.replace(/<p(.*?)>([\w\W]*?)<\/p>/gi, '$2<br>');
 			}
 
@@ -801,7 +801,7 @@
 		setFullpageOnInit: function(html)
 		{
 			html = this.cleanSavePreCode(html, true);
-			html = this.cleanConverters(html);
+			//html = this.cleanConverters(html);
 			html = this.cleanEmpty(html);
 
 			// set code
