@@ -5771,7 +5771,7 @@
 							}
 
 							var img = $('<img src="' + val.thumb + '" class="redactorfolder redactorfolder' + folderkey + '" rel="' + val.image + '" title="' + thumbtitle + '" />');
-							$('#redactor_image_box').append(img);
+							$('#redactor_image_box').prepend(img);
 							$(img).click($.proxy(this.imageThumbClick, this));
 
 						}, this));
