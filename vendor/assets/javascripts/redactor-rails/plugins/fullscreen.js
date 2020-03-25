@@ -57,7 +57,12 @@ RedactorPlugins.fullscreen = {
 			$(window).off('resize', $.proxy(this.fullScreenResize, this));
 			$('body, html').css('overflow', '');
 
-			this.$box.removeClass('redactor_box_fullscreen').css({ width: 'auto', height: 'auto' });
+			var newContext = $(this.$element.context).attr('id')
+			if( newContext == "selling_topic_group_mobile_body" || newContext == "selling_topic_group_mobile_body_fr" ){
+				this.$box.removeAttr('style')
+			} else {
+				this.$box.removeClass('redactor_box_fullscreen').css({ width: 'auto', height: 'auto' });
+			}
 
 			if (this.opts.iframe) html = this.$editor.html();
 
