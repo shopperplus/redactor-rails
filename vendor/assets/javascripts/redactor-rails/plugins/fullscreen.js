@@ -59,7 +59,7 @@ RedactorPlugins.fullscreen = {
 
 			var newContext = $(this.$element.context).attr('id')
 			if( newContext == "selling_topic_group_mobile_body" || newContext == "selling_topic_group_mobile_body_fr" ){
-				this.$box.removeAttr('style')
+				this.$box.removeClass('redactor_box_fullscreen').removeAttr('style')
 			} else {
 				this.$box.removeClass('redactor_box_fullscreen').css({ width: 'auto', height: 'auto' });
 			}
